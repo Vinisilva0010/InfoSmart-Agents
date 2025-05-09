@@ -5,6 +5,8 @@ import Sobre from './pages/Sobre';
 import Agentes from './pages/Agentes'; // <- adicionado
 import Header from './components/Header';
 import Chat from './pages/Chat';
+import ChatbotFlutuante from './components/ChatbotFlutuante';
+
 function App() {
   return (
     <Router>
@@ -17,6 +19,8 @@ function App() {
         <Route path="/agentes" element={<Agentes />} />
         <Route path="/chat" element={<Chat />} /> {/* nova rota */}
         </Routes>
+          {/* ✅ Chatbot sempre visível */}
+        <ChatbotFlutuante />
       </div>
     </Router>
   );

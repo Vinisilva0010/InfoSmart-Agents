@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../components/ui/Card";
 import { Link } from "react-router-dom";
 import { Bot, User } from "lucide-react";
+import ChatbotFlutuante from "../components/ChatbotFlutuante";
+
 
 // 🔲 Componente de Demonstração Simulada
 function SimulatedChat() {
@@ -229,64 +231,6 @@ export default function Home() {
         <SimulatedChat />
       </div>
 
-      {/* 🔲 Chatbot Flutuante */}
-      <div
-        className={`fixed bottom-5 right-5 w-72 bg-blue-500 text-white shadow-lg rounded-xl p-4 ${
-          isOpen ? "h-96" : "h-16"
-        }`}
-        style={{ transition: "height 0.3s", zIndex: 999 }}
-      >
-        {isOpen ? (
-          <div className="flex flex-col h-full">
-            <div className="flex-1 overflow-y-auto">
-              <div className="space-y-4">
-                {chatMessages.map((msg, index) => (
-                  <div
-                    key={index}
-                    className={`p-2 rounded-lg ${
-                      msg.isUser ? "bg-blue-600 text-white" : "bg-gray-700 text-white"
-                    }`}
-                  >
-                    {msg.text}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Escreva uma mensagem..."
-                className="flex-1 p-2 rounded-l-lg border-none text-black"
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    sendMessage(inputValue);
-                  }
-                }}
-              />
-              <button
-                onClick={() => sendMessage(inputValue)}
-                className="p-2 bg-blue-600 text-white rounded-r-lg"
-              >
-                Enviar
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-center justify-center h-full">
-            <span>Tire suas dúvidas</span>
-          </div>
-        )}
-      </div>
-
-      <button
-        onClick={toggleChat}
-        className="fixed bottom-5 right-5 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700"
-        style={{ zIndex: 1000 }}
-      >
-        {isOpen ? "Fechar" : "Abrir"}
-      </button>
     </div>
   );
 }
