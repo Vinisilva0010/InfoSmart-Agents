@@ -3,6 +3,7 @@ import { Card, CardContent } from "../components/ui/Card";
 import { Link } from "react-router-dom";
 import { Bot, User } from "lucide-react";
 import ChatbotFlutuante from "../components/ChatbotFlutuante";
+import AgenteCardList from "../components/AgenteCardList";
 
 
 // 🔲 Componente de Demonstração Simulada
@@ -141,29 +142,11 @@ export default function Home() {
       />
       <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-      {/* 🔲 Conteúdo */}
-      <div className="relative z-10 w-full flex flex-col items-center">
-        {/* 🔲 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-8 max-w-7xl mt-16">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-gray-900 bg-opacity-80 rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:shadow-blue-500/30 transition-transform transform hover:scale-105"
-            >
-              <div className="h-48 w-full bg-gray-800 flex items-center justify-center">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2 text-blue-400">{card.title}</h2>
-                <p className="text-gray-300">{card.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+     <div className="relative z-10 w-full flex flex-col items-center">
+  {/* 🔲 Cards atualizados com botão Saiba Mais */}
+  <AgenteCardList />
+
+
 
         <div className="mt-12 mb-20">
           <Link
