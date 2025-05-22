@@ -1,0 +1,13 @@
+{
+  "frameworks": {
+    "react": {
+      "buildCommand": "npm install && npm run build",
+      "outputDirectory": "build"
+    }
+  },
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "build",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+} 

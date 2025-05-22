@@ -87,4 +87,3 @@ A API estará disponível em: http://localhost:8000
 ## Contato
 
 Para dúvidas ou sugestões, entre em contato pelo email: contato@infosmart.com.br
- 
