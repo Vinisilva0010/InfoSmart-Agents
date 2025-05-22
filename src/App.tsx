@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contato from './pages/Contato';
@@ -6,6 +7,7 @@ import Agentes from './pages/Agentes';
 import Header from './components/Header';
 import Chat from './pages/Chat';
 import AgenteDetalhe from "./pages/AgenteDetalhe";
+import ChatbotFlutuante from './components/ChatbotFlutuante';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/agente/:id" element={<AgenteDetalhe />} />
         </Routes>
+        <ChatbotFlutuante />
       </div>
     </Router>
   );

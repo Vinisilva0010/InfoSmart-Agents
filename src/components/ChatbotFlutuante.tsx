@@ -1,8 +1,9 @@
+import React from "react";
 import { MessageCircle } from "lucide-react";
 
 export default function ChatbotFlutuante() {
   const redirectToChatbot = () => {
-    window.open("https://infosmart-demo.vercel.app/", "_blank", "noopener,noreferrer");
+    window.open("/chat", "_self");
   };
 
   return (

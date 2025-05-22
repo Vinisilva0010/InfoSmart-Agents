@@ -1,8 +1,7 @@
 {
-  "name": "frontend",
+  "name": "infosmart",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
   "dependencies": {
     "@testing-library/dom": "^9.3.3",
     "@testing-library/jest-dom": "^6.1.5",
@@ -15,7 +14,6 @@
     "axios": "^1.6.2",
     "framer-motion": "^10.16.14",
     "lucide-react": "^0.294.0",
-    "openai": "^4.20.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",

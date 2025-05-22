@@ -1,88 +1,61 @@
 # InfoSmart - Plataforma de Agentes de IA
 
-A InfoSmart é uma empresa especializada na criação de agentes de inteligência artificial personalizados para negócios. Este projeto contém o website institucional e o painel de controle para gerenciamento dos agentes.
+A InfoSmart é uma empresa especializada na criação de agentes de inteligência artificial personalizados para negócios. Este projeto contém o website institucional da empresa.
+
+## Visão Geral do Projeto
+
+Este é um website React desenvolvido com TypeScript e estilizado com TailwindCSS. O site apresenta os serviços da InfoSmart, mostra exemplos de agentes de IA e oferece uma demonstração interativa de chatbot.
 
 ## Estrutura do Projeto
 
-- **frontend**: Aplicação React com TypeScript e TailwindCSS
-- **backend**: API em FastAPI (Python)
+- `src/components`: Componentes reutilizáveis
+- `src/pages`: Páginas da aplicação
+- `src/components/ui`: Componentes de UI reutilizáveis
+- `public/images`: Imagens e outros assets estáticos
 
 ## Requisitos
 
-### Frontend
 - Node.js 16+
 - NPM ou Yarn
 
-### Backend
-- Python 3.9+
-- Poetry (recomendado) ou Pip
-
 ## Configuração
 
-### Frontend
-
-1. Instale as dependências:
+1. Clone o repositório:
 ```bash
-cd frontend
+git clone https://github.com/Vinisilva0010/InfoSmart-Agents.git
+cd InfoSmart-Agents
+```
+
+2. Instale as dependências:
+```bash
 npm install
 ```
 
-2. Crie o arquivo de variáveis de ambiente:
-```bash
-cp .env.example .env.local
-```
-
-3. Configure as variáveis no arquivo `.env.local`
-
-### Backend
-
-1. Instale as dependências:
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
-2. Crie o arquivo de variáveis de ambiente:
-```bash
-cp .env.example .env
-```
-
-3. Configure as variáveis no arquivo `.env` (especialmente OPENROUTER_API_KEY e SMTP)
-
 ## Execução
 
-### Frontend
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
-cd frontend
-npm run dev
+npm start
 ```
 
-O frontend estará disponível em: http://localhost:3000
+O website estará disponível em: http://localhost:3000
 
-### Backend
+Para criar uma versão de produção:
 
 ```bash
-cd backend
-python -m uvicorn main:app --reload
+npm run build
 ```
 
-A API estará disponível em: http://localhost:8000
+Os arquivos otimizados serão gerados na pasta `build/`.
 
-## Desenvolvimento
+## Recursos do Website
 
-### Estrutura de pastas (Frontend)
-
-- `src/components`: Componentes reutilizáveis
-- `src/pages`: Páginas da aplicação
-- `src/hooks`: React hooks customizados
-- `src/utils`: Funções utilitárias
-
-### Estrutura de pastas (Backend)
-
-- `app/routers`: Endpoints da API
-- `app/models`: Modelos de dados (Pydantic)
-- `app/services`: Serviços (email, IA, etc.)
+- **Página Inicial**: Apresenta visão geral da empresa e seus serviços
+- **Sobre**: Informações detalhadas sobre a empresa e sua missão
+- **Agentes**: Catálogo dos agentes de IA disponíveis
+- **Contato**: Formulário para os visitantes entrarem em contato
+- **Chat**: Demonstração interativa de um chatbot
 
 ## Contato
 

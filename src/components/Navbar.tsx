@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { Menu, X } from "lucide-react"; // ícones para abrir/fechar menu
 
 export default function Navbar() {

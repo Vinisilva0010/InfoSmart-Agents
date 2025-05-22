@@ -6,7 +6,7 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const openChatbot = () => {
-    window.open("https://infosmart-demo.vercel.app/", "_blank", "noopener,noreferrer");
+    window.location.href = "/chat";
   };
 
   return (
@@ -29,13 +29,13 @@ function Header() {
           <Link to="/" className="hover:text-blue-400 font-medium">Início</Link>
           <Link to="/sobre" className="hover:text-blue-400 font-medium">Sobre</Link>
           <Link to="/contato" className="hover:text-blue-400 font-medium">Contato</Link>
-          <button 
-            onClick={openChatbot} 
+          <Link 
+            to="/chat" 
             className="hover:text-blue-400 font-medium flex items-center"
           >
             <MessageCircle className="w-4 h-4 mr-1" />
             Chatbot Demo
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -53,16 +53,14 @@ function Header() {
           <Link to="/" className="block hover:text-blue-400 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Início</Link>
           <Link to="/sobre" className="block hover:text-blue-400 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Sobre</Link>
           <Link to="/contato" className="block hover:text-blue-400 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Contato</Link>
-          <button 
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              openChatbot();
-            }} 
+          <Link 
+            to="/chat"
             className="block hover:text-blue-400 font-medium w-full text-left flex items-center"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <MessageCircle className="w-4 h-4 mr-1" />
             Chatbot Demo
-          </button>
+          </Link>
         </div>
       )}
     </header>
