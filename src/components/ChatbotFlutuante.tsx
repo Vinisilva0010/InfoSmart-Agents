@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 export default function ChatbotFlutuante() {
   const redirectToChatbot = () => {
-    window.open("/chat", "_self");
+    window.open("https://infosmart-demo.vercel.app/", "_blank"); // abre em nova aba
   };
 
   return (
