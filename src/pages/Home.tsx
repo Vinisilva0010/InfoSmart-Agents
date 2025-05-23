@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";  // Adicione isso
 import { Link } from "react-router-dom";
 import AgenteCardList from "../components/AgenteCardList";
 import { Bot, User } from "lucide-react";
@@ -124,7 +124,7 @@ export default function Home() {
         {/* 🔲 Botão para alternar entre imagem e vídeo */}
         <button
           onClick={toggleBackground}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden sm:block"  // Esconde o botão em telas pequenas
         >
           Alternar Fundo
         </button>
