@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "../components/ui/Card";
 import { Link } from "react-router-dom";
-import { Bot, User } from "lucide-react";
 import AgenteCardList from "../components/AgenteCardList";
+import { Bot, User } from "lucide-react";
 
 // 🔲 Componente de Demonstração Simulada
 function SimulatedChat() {
@@ -89,23 +88,49 @@ function SimulatedChat() {
 
 // 🔲 Página Principal
 export default function Home() {
+  // Estado para alternar entre imagem e vídeo
+  const [isVideo, setIsVideo] = useState(false);
+
+  // Função para alternar entre imagem e vídeo
+  const toggleBackground = () => {
+    setIsVideo((prev) => !prev);
+  };
+
   return (
     <div className="relative min-h-screen text-white flex flex-col items-center">
-      {/* 🔲 Background com imagem e overlay escuro */}
+      {/* 🔲 Background alternando entre imagem e vídeo */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/images/background.jpg')",
+          backgroundImage: isVideo ? "none" : "url('/images/background.jpg')", // Imagem de fundo
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       />
+      
+      {isVideo && (
+        <div className="absolute inset-0 z-0">
+          <video autoPlay loop muted className="w-full h-full object-cover">
+            <source src="/video/video.mp4" type="video/mp4" />
+            Seu navegador não suporta o formato de vídeo.
+          </video>
+        </div>
+      )}
+      
       <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
-     <div className="relative z-10 w-full flex flex-col items-center">
-  {/* 🔲 Cards atualizados com botão Saiba Mais */}
-  <AgenteCardList />
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* 🔲 Botão para alternar entre imagem e vídeo */}
+        <button
+          onClick={toggleBackground}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Alternar Fundo
+        </button>
+
+        {/* 🔲 Cards atualizados com botão Saiba Mais */}
+        <AgenteCardList />
 
         <div className="mt-12 mb-20">
           <Link
@@ -173,6 +198,20 @@ export default function Home() {
         <SimulatedChat />
       </div>
 
+      {/* 🔲 Footer */}
+      <footer className="w-full bg-gray-800 text-white py-6 mt-12">
+        <div className="container mx-auto text-center">
+          <p>&copy; 2025 InfoSmart - Todos os direitos reservados</p>
+          <p>
+            <Link to="/about" className="text-blue-400 hover:underline">
+              Sobre Nós
+            </Link> | 
+            <a href="https://github.com/infosmart/demo" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              GitHub
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
